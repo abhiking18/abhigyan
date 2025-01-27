@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposal for You</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f8fb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #ff66b2;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 1.2em;
+      color: #ff3385;
+    }
+
+    input {
+      width: 80%;
+      padding: 10px;
+      font-size: 1.1em;
+      margin: 20px 0;
+      border-radius: 8px;
+      border: 2px solid #ff66b2;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #ff3385;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1.2em;
+      background-color: #ff66b2;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ff3385;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 1.5em;
+      color: #ff66b2;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Proposal for You</h1>
+    
+    <form id="proposal-form">
+      <label for="name">Enter Your Name:</label><br>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="message" class="message"></div>
+  </div>
+
+  <script>
+    // When the form is submitted
+    document.getElementById('proposal-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var name = document.getElementById('name').value;
+
+      // Show the message with her name
+      if (name) {
+        var message = `I love you, ${name}. Please accept my proposal!`;
+        var messageDiv = document.getElementById('message');
+        messageDiv.innerHTML = message;
+        messageDiv.style.display = 'block';
+      } else {
+        alert('Please enter your name!');
+      }
+    });
+  </script>
+
+</body>
+</html>
